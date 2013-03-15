@@ -1,0 +1,32 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @blog.id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @blog.content %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @blog.category && @blog.category.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @blog.user.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_blog_path(@blog) %> |
+<%= link_to 'Back', admin_blogs_path %>

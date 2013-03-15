@@ -1,0 +1,25 @@
+
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml","xml:lang" => "en",:lang=>'zh'}
+  %head
+    %meta{:charset=>'utf-8'}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    %title= "title"
+    = yield :css
+    = yield :head
+
+  %body.admin.content
+    .page-title
+      = render "layouts/admin/title"
+    .page-content
+      .left
+        = render "layouts/admin/left"
+      .right      
+        = yield
+
+    = yield :javascript
+
+
+
+

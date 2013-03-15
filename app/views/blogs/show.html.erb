@@ -1,0 +1,35 @@
+	<h2>博客</h2>
+  <div>
+    	<%= @blog.user.username %>
+    </div>
+    <br/>
+
+    <div>
+      <%=  link_to @blog.title,@blog %>
+    </div>
+    <br/>
+
+    <div>
+      <%= @blog.content %>
+    </div>
+    <br/>
+    <div>
+      <%= link_to @blog.category.name , @blog.category %>
+      评论<%= @blog.comments.length-1 %>  转载  
+	</div>
+	<br/>
+
+	<div>
+		<%= render 'form' %>
+	</div>
+
+	<div>
+    <h3>评论：</h3>
+		<% @blog.comments.each do |comment| %>
+			<%= comment.user && comment.user.username %>
+			<br/>
+			<%= comment.content %>
+      <br/>
+      <br/>
+		<% end %> 
+	</div>

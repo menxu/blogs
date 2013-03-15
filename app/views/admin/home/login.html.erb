@@ -1,0 +1,21 @@
+
+<div class="login">
+	<h1><%= image_tag "rails.png" %>  登陆首页</h1>
+	<div>
+		<%= form_tag sessions_admin_home_path, :method => :post do %>
+			<%= flash[:notice] %>
+			<br/>
+
+			<%= label_tag :username, '用户名:' %>
+			<%= text_field_tag :username %>
+			<br/>
+
+			<%= label_tag :password, '密   码:' %>
+			<%= password_field_tag :password %>
+
+			<%= submit_tag '提交' %>
+
+		<% end %>
+	</div>
+	p ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'][Time.now.wday]
+</div>

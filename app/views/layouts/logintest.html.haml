@@ -1,0 +1,33 @@
+
+!!! 1.1
+%html{:xmlns => "http://www.w3.org/1999/xhtml","xml:lang" => "en",:lang=>'zh'}
+  %head
+    %meta{:charset=>'utf-8'}
+    %title='你好'
+    = yield :css
+    = yield :head
+
+  %body.auth
+    .page-content
+      = yield
+
+    = yield :javascript
+
+
+
+    / <!DOCTYPE html>
+/ <html>
+/ <head>
+/   <title>BlogTwo</title>
+/   <%= stylesheet_link_tag    "application", :media => "all" %>
+/   <%= javascript_include_tag "application" %>
+/   <%= csrf_meta_tags %>
+/ </head>
+/ <body class="body">
+/   <%= yield %>
+/   <div>
+/     你好啊
+/   </div>
+/ </body>
+/ </html>
+

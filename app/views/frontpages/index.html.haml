@@ -1,0 +1,15 @@
+- htitle '博客首页信息'
+
+- hbreadcrumb '博客管理首页'
+
+.categories
+  - @categorys.each do |category| 
+    .category= link_to category.name, category
+
+.blogs
+  - @blogs.each do |blog|
+    .uname= blog.user.username
+    .title= link_to blog.title,blog
+    .content= blog.content
+    .category= link_to blog.category.name , blog.category
+    .reprint= "评论 #{blog.comments.length} 转载"

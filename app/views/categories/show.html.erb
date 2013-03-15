@@ -1,0 +1,15 @@
+<h1><%= @category.name %></h1>
+<p id="notice"><%= notice %></p>
+
+<div class="blogs-cen">
+  <% @blogs.each do |blog| %>
+    <div>
+     <%= blog.category.name %>  > 
+     <%= blog.id %>             > 
+     <%= blog.title %>          >
+     <%= blog.user.username %>  >
+     <%= link_to 'Show', admin_blog_path(blog) %>
+    </div>
+    <div><%= blog.content %></div>
+  <% end %>
+</div>

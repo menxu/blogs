@@ -1,0 +1,58 @@
+body.admin.content{
+  margin:0 auto;
+  padding: 0;
+  color: black;
+  font-size: 16px;
+  background: rgba(#334455,0.5);
+
+  .page-title{
+    .top{
+      margin: 20px;
+      .left{
+        float: left;
+      }
+      .right{
+        float: right;
+      }
+      .top-but{
+        margin: 10px;
+        clear: both;
+        float: right;
+      }
+    }
+  }
+  .page-content{
+    clear: both;
+    .left{
+      float: left;
+      width: 160px;
+      .nav{
+        display: block;
+        font-size: 20px;
+        text-decoration: none;
+        margin: 10px;
+      }
+    }
+    .right{
+      display: block;
+      margin-left: 160px;
+
+      table{
+        border:solid #add9c0; 
+        border-width:1px 0px 0px 1px;
+        tr.head th{
+          min-width: 70px;
+          font-size: 24px;
+          &:nth-child(2){
+            min-width: 150px;
+          }
+        }
+        tr td{
+          border:solid #add9c0; 
+          border-width:0px 1px 1px 0px; 
+          padding:10px 0px;
+        }
+      }
+    }
+  }
+}

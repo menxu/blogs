@@ -1,0 +1,23 @@
+:ruby
+  td = [1,2,3][rand 3].day.ago
+  num = [1,2,3][rand 3]
+  trueOrFause = true if 2 > num
+
+.page-login
+  .test
+    %span= td
+    %span= trueOrFause
+  = form_tag('/auth/logins', :method => :post) do
+    .fields
+      .field.top
+        .field.name.placeholder
+          %label 用户名
+          = text_field_tag :username
+        .field.password.placeholder
+          %label 密码
+          =password_field_tag :password
+      .field.submit
+        %a.form-submit-ajax-button{:href=>'javascript:;'} 登 录
+
+    .fields
+      .login-errors{:style=>'display:none;'} 登录失败：用户名密码错误

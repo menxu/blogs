@@ -1,0 +1,21 @@
+:ruby
+  tstr = ((yield :title) || '').gsub("\n",'')
+  title = tstr.blank? ? 'Blog LOGIN' : "#{tstr} - Blog LOGIN"
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml","xml:lang" => "en",:lang=>'zh'}
+  %head
+    %meta{:charset=>'utf-8'}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    %title= title
+    = yield :css
+    = yield :head
+
+  %body.auth
+    .page-content
+      = yield
+
+    = yield :javascript
+    .page
+
+

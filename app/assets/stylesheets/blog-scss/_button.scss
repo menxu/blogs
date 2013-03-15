@@ -1,0 +1,166 @@
+@mixin base-mini-button{
+  height : 38px;
+  line-height : 38px;
+  padding : 0 24px;
+  box-shadow : none;
+  border : 1px solid rgba(black, 0.3);
+
+  font-size:14px;
+  font-weight:bold;
+  color:white;&:hover{color:white;text-decoration:none;};
+  text-align:center;
+
+  display:inline-block;float:left;
+  @include border-radius(3px);
+
+  &.disabled{
+    @include gradient(#fbfbfb, #f4f4f4);
+    border:solid 1px #ccc;
+    box-shadow:none;
+    text-shadow:none;
+    color:#cacaca;
+  }
+}
+
+@mixin mini-button{
+  @include base-mini-button;
+
+  @include gradient(#A4D800, #71B600);
+  &:hover{@include gradient(lighten(#A4D800, 5%), lighten(#71B600, 5%));}
+  box-shadow:0 1px 0 #C0E500 inset;
+  text-shadow:-1px -1px rgba(black, 0.4);
+  border-top-color:#6EBC00;
+  border-left-color:#60A800;
+  border-right-color:#60A800;
+  border-bottom-color:#4D8A00;
+
+  height:30px;line-height:30px;
+  padding:0 14px;
+}
+
+@mixin mini-button-close{
+  @include base-mini-button;
+  @include gradient(#666, #555);
+  border-color:rgba(white, 0.3);
+  &:hover{
+    @include gradient(lighten(#666, 10%), lighten(#555, 10%));
+  }
+}
+
+@mixin mini-button-black{
+  @include base-mini-button;
+  @include gradient(#777, #555);
+  box-shadow:0 1px 0 rgba(white, 0.3) inset;
+  border-color:rgba(black, 0.3);
+  border-bottom-color:#333;
+  height:30px;line-height:30px;
+  padding:0 14px;
+  &:hover{
+    @include gradient(lighten(#777, 10%), lighten(#555, 10%));
+  }
+}
+
+@mixin mini-button-red{
+  @include base-mini-button;
+  @include gradient(#dc6b5b, #c74137);
+  border-color:rgba(black, 0.3);
+  height:30px;line-height:30px;
+  padding:0 14px;
+  &:hover{
+    @include gradient(lighten(#dc6b5b, 10%), lighten(#c74137, 10%));
+  }
+}
+
+@mixin mini-button-gray{
+  @include base-mini-button;
+  @include gradient(#F8F8F8, #ECECEC);
+  box-shadow:0 0 1px #FBFBFB inset;
+  border-color:rgba(black, 0.1);
+  height:30px;line-height:30px;
+  padding:0 14px;
+  color:#73797C;
+  text-shadow:none;
+  &:hover{
+    @include gradient(#F8F8F8, #F1F1F1);
+    color:#73797C;
+  }
+}
+
+@mixin mini-button-orange{
+  @include base-mini-button;
+  @include gradient(#fda034, #FF8201);
+  box-shadow:0 1px 0 rgba(white, 0.3) inset;
+  text-shadow:-1px -1px rgba(black, 0.4);
+  border-color:rgba(black, 0.2);
+  height:30px;line-height:30px;
+  padding:0 14px;
+  color:white;
+  &:hover{
+    @include gradient(lighten(#fda034, 10%), lighten(#FF8201, 10%));
+  }
+}
+
+@mixin mini-button-blue{
+  @include base-mini-button;
+  @include gradient(lighten(#2079C1, 10%), lighten(#1F659A, 10%));
+  box-shadow:0 1px 0 rgba(white, 0.3) inset;
+  text-shadow:-1px -1px rgba(black, 0.4);
+  border-color:rgba(black, 0.2);
+  height:30px;line-height:30px;
+  padding:0 14px;
+  &:hover{
+    @include gradient(lighten(#2079C1, 20%), lighten(#1F659A, 20%));
+  }
+}
+
+@mixin icon-close-24($color){
+  width:24px;height:24px;
+  overflow:hidden;line-height:20em;
+  @include border-radius(2px);
+  display:block;
+  position:relative;
+
+  &:hover{
+    background-color:rgba(black, 0.1);
+  }
+
+  &:before, &:after{
+    content:"";
+    height:17px;width:3px;
+    background-color:$color;
+    position:absolute;
+    top:4px;left:11px;
+  }
+
+  &:before{
+    @include transform(rotate(45deg));
+  }
+  &:after{
+    @include transform(rotate(-45deg));
+  }
+}
+
+.page-upload-button{
+  $w:86px;
+  $h:32px;
+
+  width:$w;
+  height:$h;
+  position:relative;
+  overflow:hidden;
+
+  a.button{
+    @include mini-button-orange;
+    display:block;
+    height:$h - 2px;line-height:$h - 2px;
+    width:$w - 2px;
+    margin:0;padding:0;
+  }
+  input[type=file]{
+    position:absolute;
+    top:0;right:0;
+    font-size:118px;
+    opacity:0;
+    cursor:pointer;
+  }
+}

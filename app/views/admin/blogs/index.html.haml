@@ -1,0 +1,28 @@
+
+%table
+  %tr.head
+    %td='编号'
+    %td='标题'
+    %td='内容'
+    %td='分类'
+    %td='用户'
+    %td
+    %td
+    %td
+
+  - @blogs.each do |blog|
+    %tr
+      %td= blog.id
+      - title = blog.title.length > 10 ?  blog.title[0,10] + '...' : blog.title
+      - content = blog.content.length > 30 ?  blog.content[0,30] + '...' : blog.content
+
+      %td= title
+      %td= content 
+      %td= blog.category && blog.category.name
+      %td= blog.user.username
+      
+      %td= link_to '查看全部', admin_blog_path(blog)
+      %td= link_to '编辑', edit_admin_blog_path(blog)
+      %td= link_to '删除', admin_blog_path(blog), :method => :delete, :data => { :confirm => '确定要删除吗？' }
+
+= link_to '添加一条', new_admin_blog_path
