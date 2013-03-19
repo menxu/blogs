@@ -1,28 +1,25 @@
+- htitle '博客管理'
 
-%table
-  %tr.head
-    %td='编号'
-    %td='标题'
-    %td='内容'
-    %td='分类'
-    %td='用户'
-    %td
-    %td
-    %td
-
-  - @blogs.each do |blog|
+- hbreadcrumb '博客管理首页'
+.page-model-show
+  %table
     %tr
-      %td= blog.id
-      - title = blog.title.length > 10 ?  blog.title[0,10] + '...' : blog.title
-      - content = blog.content.length > 30 ?  blog.content[0,30] + '...' : blog.content
+      %th=  'ID'
+      %th=  '主题'
+      %th=  '内容'
+      %th=  '分类'
+      %th=  ''
+      %th=  ''
+      %th=  ''
 
-      %td= title
-      %td= content 
-      %td= blog.category && blog.category.name
-      %td= blog.user.username
-      
-      %td= link_to '查看全部', admin_blog_path(blog)
-      %td= link_to '编辑', edit_admin_blog_path(blog)
-      %td= link_to '删除', admin_blog_path(blog), :method => :delete, :data => { :confirm => '确定要删除吗？' }
+    - @blogs.each do |blog|
+      %tr
+        %th=  blog.id
+        %th=  blog.title
+        %th=  sanitize blog.content
+        %th=  blog.category.name
+        %th=  link_to '显示', admin_blog_path(blog)
+        %th=  link_to '编辑', edit_admin_blog_path(blog)
+        %th=  link_to '删除', admin_blog_path(blog), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to '添加一条', new_admin_blog_path
+  .add= link_to '增加', new_admin_blog_path

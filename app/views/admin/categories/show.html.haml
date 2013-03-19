@@ -1,0 +1,28 @@
+- htitle '博客分类显示'
+
+- hgoback '/admin/categories'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '博客分类管理', '/admin/categories'
+- hbreadcrumb "#{@category.name}"
+
+
+/ = page_top_fixed 'buttons' do
+/   = page_buttons do |p|
+/     = p.button '增加一个博客分类', '/admin/students/new', :class => 'create'
+
+.page-model-show
+  .id
+    .name= 'ID'
+    .value= @category.id
+
+  .name
+    .name= '主题'
+    .value= @category.name
+
+  .level
+    .name= '排序'
+    .value= @category.level
+
+= page_top_fixed 'buttons' do
+  = page_buttons do |p|
+    = p.button '编辑', edit_admin_category_path(@category), :class => 'edit'

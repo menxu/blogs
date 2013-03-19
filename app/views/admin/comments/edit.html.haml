@@ -1,0 +1,27 @@
+- htitle '评论显示'
+
+- hgoback '/admin/comments'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '评论管理', '/admin/comments'
+- hbreadcrumb "#{@comment.blog && @comment.blog.title}编辑"
+
+.page-model-form
+  = form_for [:admin, @comment] do |t|
+    .field
+      = t.hidden_field :id
+
+    .field.need
+      %label 评论博客主题
+      = t.select(:blog_id,options_from_collection_for_select(Blog.all , :id , :title, @comment.blog.id))
+
+    .field.need
+      %label 评论内容
+      = t.text_area :content
+
+    .field.need
+      %label 用户
+      = t.select(:user_id,options_from_collection_for_select(User.all , :id , :username, @comment.user.id))
+
+    .field.submit
+      = jfsubmit '确定'
+      = jfcancel '取消'

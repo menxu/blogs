@@ -1,0 +1,23 @@
+.page-breadcrumb{
+  .link{
+    float:left;
+    height:20px;line-height:20px;
+    position:relative;
+    padding-right:30px;
+    margin-right:5px;
+
+    &:after{
+      content:"";
+      color:#999;
+      right:0px;top:5px;
+      position:absolute;
+      width:24px;height:24px;
+      background:url(/assets/icons1203.png) no-repeat -75px -100px;
+    }
+
+    &:last-child{
+      &:after{display:none;}
+      a{font-weight:bold;}
+    }
+  }
+}

@@ -1,6 +1,6 @@
 class Admin::BlogsController < ApplicationController
   layout 'admin'
-  before_filter :authenticate!, :only => [:show]
+  # before_filter :authenticate!, :only => [:show]
   # GET /blogs
   # GET /blogs.json
   def index
@@ -43,7 +43,7 @@ class Admin::BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
-    @blog.user = get_admin
+
     respond_to do |format|
       if @blog.save
         format.html { redirect_to [:admin , @blog], :notice => 'Blog was successfully created.' }
@@ -60,15 +60,12 @@ class Admin::BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
 
-    respond_to do |format|
-      if @blog.update_attributes(params[:blog])
-        format.html { redirect_to [:admin , @blog], :notice => 'Blog was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @blog.errors, :status => :unprocessable_entity }
-      end
+    if @blog.update_attributes params[:blog]
+      return redirect_to "/admin/blogs/#{@blog.id}"
     end
+    # error = @student.errors.first
+    # flash[:error] = error[1]
+    redirect_to "/admin/blogs/#{@blog.id}/edit"
   end
 
   # DELETE /blogs/1

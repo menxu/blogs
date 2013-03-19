@@ -1,0 +1,23 @@
+- htitle '博客分类编辑'
+
+- hgoback '/admin/categories'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '博客分类管理', '/admin/categories'
+- hbreadcrumb "#{@category.name}"
+
+.page-model-form
+  = form_for [:admin, @category] do |t|
+    .field
+      = t.hidden_field :id
+
+    .field.need
+      %label 主题
+      = t.text_field :name
+
+    .field
+      %label 排序
+      = t.text_field :level
+
+    .field.submit
+      = jfsubmit '确定'
+      = jfcancel '取消'

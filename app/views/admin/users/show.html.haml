@@ -1,0 +1,28 @@
+- htitle '用户显示'
+
+- hgoback '/admin/users'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '用户显示管理', '/admin/users'
+- hbreadcrumb "#{@user.username}"
+
+
+/ = page_top_fixed 'buttons' do
+/   = page_buttons do |p|
+/     = p.button '增加一个博客分类', '/admin/students/new', :class => 'create'
+
+.page-model-show
+  .id
+    .name= 'ID'
+    .value= @user.id
+
+  .name
+    .name= '用户名'
+    .value= @user.username
+
+  .level
+    .name= '密码'
+    .value= @user.password
+
+= page_top_fixed 'buttons' do
+  = page_buttons do |p|
+    = p.button '编辑', edit_admin_user_path(@user), :class => 'edit'

@@ -1,0 +1,27 @@
+- htitle '博客分类编辑'
+
+- hgoback '/admin/blogs'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '博客分类管理', '/admin/blogs'
+- hbreadcrumb "新增"
+
+.page-model-form
+  = form_for [:admin, @blog] do |t|
+    .field
+      = t.hidden_field :id
+
+    .field.need
+      %label 主题
+      = t.text_field :title
+
+    .field
+      %label 内容
+      = t.kindeditor :content
+
+    .field
+      %label 分类
+      = t.select(:category_id,options_from_collection_for_select(Category.all , :id , :name))
+      
+    .field.submit
+      = jfsubmit '确定'
+      = jfcancel '取消'

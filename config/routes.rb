@@ -1,6 +1,10 @@
 BlogTwo::Application.routes.draw do
   namespace :admin do
-    root :to => 'home#login'
+    # root :to => 'home#login'
+    root :to => 'index#index'
+
+    resources :index
+
     resources :comments
 
     resources :blogs
@@ -14,6 +18,7 @@ BlogTwo::Application.routes.draw do
       get :login
     end
   end
+
 
   namespace :auth do
     root :to => 'logins#index'
@@ -43,6 +48,11 @@ BlogTwo::Application.routes.draw do
     get '/blog_lists' => 'blog_lists#pull'
   end
 
+
+  post '/upload' => 'file_entities#upload'
+  post '/kindeditor_upload' => 'file_entities#kindeditor_upload'
+  get  '/download/:download_id' => 'file_entities#download'
+  post '/file_entities/:id/re_encode'  => 'file_entities#re_encode'
 
   # get  '/api/blog_lists'  => 'blogs'
 

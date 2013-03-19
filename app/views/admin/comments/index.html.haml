@@ -1,0 +1,26 @@
+- htitle '评论管理'
+
+- hbreadcrumb '评论管理首页'
+
+.page-model-show
+  %table
+    %tr
+      %th=  'ID'
+      %th=  '博客主题'
+      %th=  '评论内容'
+      %th=  '用户'
+      %th=  ''
+      %th=  ''
+      %th=  ''
+
+    - @comments.each do |comment|
+      %tr
+        %th=  comment.id
+        %th=  comment.blog && comment.blog.title
+        %th=  comment.content
+        %th=  comment.user.username
+        %th=  link_to '显示', admin_comment_path(comment)
+        %th=  link_to '编辑', edit_admin_comment_path(comment)
+        %th=  link_to '删除', admin_comment_path(comment), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .add= link_to '增加', new_admin_comment_path

@@ -20,9 +20,18 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'rails_kindeditor', '~> 0.3.11'
+end
+
+group :test do
+  gem 'rspec-rails', '2.13.0'
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'coveralls', :require => false # 帮助在 coveralls.io 线统计测试覆盖率
 end
 
 gem 'jquery-rails'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

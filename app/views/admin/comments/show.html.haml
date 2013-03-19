@@ -1,0 +1,32 @@
+- htitle '评论显示'
+
+- hgoback '/admin/comments'
+- hbreadcrumb '首页', '/admin'
+- hbreadcrumb '评论管理', '/admin/comments'
+- hbreadcrumb "#{@comment.blog && @comment.blog.title}显示"
+
+
+/ = page_top_fixed 'buttons' do
+/   = page_buttons do |p|
+/     = p.button '增加一个博客分类', '/admin/students/new', :class => 'create'
+
+.page-model-show
+  .id
+    .name= 'ID'
+    .value= @comment.id
+
+  .name
+    .name= '评论博客主题'
+    .value= @comment.blog && @comment.blog.title
+
+  .name 
+    .name= '评论内容'
+    .value= @comment.content
+
+  .level
+    .name= '用户'
+    .value= @comment.user.username
+
+= page_top_fixed 'buttons' do
+  = page_buttons do |p|
+    = p.button '编辑', edit_admin_comment_path(@comment), :class => 'edit'

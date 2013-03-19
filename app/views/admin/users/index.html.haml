@@ -1,0 +1,22 @@
+- htitle '用户管理'
+
+- hbreadcrumb '用户管理首页'
+.page-model-show
+  %table
+    %tr
+      %th=  'ID'
+      %th=  '用户名'
+      %th=  '密码'
+      %th=  ''
+      %th=  ''
+
+    - @users.each do |user|
+      %tr
+        %th=  user.id
+        %th=  user.username
+        %th=  user.password
+        %th=  link_to '显示', admin_user_path(user)
+        %th=  link_to '编辑', edit_admin_user_path(user)
+        %th=  link_to '删除', admin_user_path(user), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .add= link_to '增加', new_admin_user_path

@@ -1,0 +1,23 @@
+- htitle '博客分类管理'
+
+- hbreadcrumb '博客分类管理首页'
+.page-model-show
+  %table
+    %tr
+      %th=  'ID'
+      %th=  '主题'
+      %th=  '分类'
+      %th=  ''
+      %th=  ''
+      %th=  ''
+
+    - @categories.each do |category|
+      %tr
+        %th=  category.id
+        %th=  category.name
+        %th=  category.level
+        %th=  link_to '显示', admin_category_path(category)
+        %th=  link_to '编辑', edit_admin_category_path(category)
+        %th=  link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .add= link_to '增加', new_admin_category_path
