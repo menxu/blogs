@@ -18,6 +18,13 @@
       %label 密码
       = t.text_field :password
 
+    .field
+      %label 头像
+      - if @user.avatar
+        = image_tag @user.avatar.url
+
+      = t.file_field :avatar
+
     .field.submit
       = jfsubmit '确定'
       = jfcancel '取消'
