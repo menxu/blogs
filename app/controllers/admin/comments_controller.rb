@@ -1,6 +1,6 @@
 class Admin::CommentsController < ApplicationController
   layout 'admin'
-  # before_filter :authenticate!, :only => [:show]
+  before_filter :authenticate!
   # GET /comments
   # GET /comments.json
   def index

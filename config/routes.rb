@@ -43,6 +43,7 @@ BlogTwo::Application.routes.draw do
 
   #用户登陆认证
   post '/login' => 'admins#login'
+  
   namespace :api do 
     #博客
     get '/blog_lists' => 'blog_lists#pull'

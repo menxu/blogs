@@ -27,6 +27,14 @@
     .name= '分类'
     .value= @blog.category.name
 
+  .name
+    .name= '类别'
+    .value= @blog.context_type
+
+  .name
+    .name= '图片资源'
+    .value= image_tag @blog.image_url.url
+
 = page_top_fixed 'buttons' do
   = page_buttons do |p|
     = p.button '编辑', edit_admin_blog_path(@blog), :class => 'edit'

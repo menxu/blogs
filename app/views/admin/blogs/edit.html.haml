@@ -22,6 +22,16 @@
       %label 分类
       = t.select(:category_id,options_from_collection_for_select(Category.all , :id , :name, @blog.category.id))
 
+    .field
+      %label 内容类别
+      = t.text_field :context_type
+
+    .field
+      %label 图片资源
+      - if @blog.image_url
+        = image_tag @blog.image_url.url
+      = t.file_field :image_url
+
     .field.submit
       = t.submit '确定', :class => 'form-submit-button'
       / = jfsubmit '确定'

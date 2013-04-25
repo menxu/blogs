@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   layout 'admin'
-  # before_filter :authenticate!, :only => [:show]
+  before_filter :authenticate!, :only => [:show]
   # GET /users
   # GET /users.json
   def index

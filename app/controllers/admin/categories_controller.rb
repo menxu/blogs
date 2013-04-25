@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   layout 'admin'
-  # before_filter :authenticate!, :only => [:show]
+  before_filter :authenticate!
   # GET /categories
   # GET /categories.json
   def index

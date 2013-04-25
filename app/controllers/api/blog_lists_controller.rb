@@ -3,10 +3,7 @@ class Api::BlogListsController < ApplicationController
   before_filter :login_required
 
   def pull
-    print "pull  blog_lists"
-    render :json => {
-      :blog_lists => Blog.all.as_json
-    }
+    render(:json => Blog.all.map{|blog| blog.to_hash})
   end
 
 end

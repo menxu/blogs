@@ -21,7 +21,16 @@
     .field
       %label 分类
       = t.select(:category_id,options_from_collection_for_select(Category.all , :id , :name))
-      
+    
+    .field
+      %label 内容类别
+      = t.text_field :context_type
+    /   = t.select(:context_type,options_from_collection_for_select(Blog.CONTEXT_TYPE , :keys , :values))
+
+    .field
+      %label 图片资源
+      = t.file_field :image_url
+
     .field.submit
       = jfsubmit '确定'
       = jfcancel '取消'

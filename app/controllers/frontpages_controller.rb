@@ -1,6 +1,8 @@
 class FrontpagesController < ApplicationController
 
   def index
+    @hashs = Frontpage.roots
+
     @blogs = Blog.all
     @categorys = Category.all
   end
