@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
   end
 
-  
   def get_admin
   	User.find(session[:current_user_id])	
   end

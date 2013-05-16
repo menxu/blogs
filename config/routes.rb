@@ -44,9 +44,12 @@ BlogTwo::Application.routes.draw do
   #用户登陆认证
   post '/login' => 'admins#login'
   
-  namespace :api do 
+  namespace :api do
+    
     #博客
     get '/blog_lists' => 'blog_lists#pull'
+    #分类
+    get '/category_lists' => 'category_lists#pull'
   end
 
 

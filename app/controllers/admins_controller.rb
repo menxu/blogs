@@ -11,7 +11,9 @@ class AdminsController < ApplicationController
     print password
     print '用户登陆'
     user = User.find_by_username(username)
+    p '-------------------------------------'
     print user.password
+    p '-------------------------------------'
     if user then
       if user.password == password then
 

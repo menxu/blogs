@@ -37,6 +37,9 @@ class Blog < ActiveRecord::Base
       :comment_count  => self.comments.count,
       :context_type   => self.context_type,
       :image_url      => self.image_url,
+      :created_time   => self.created_at.to_i,
+      :updated_time   => self.updated_at.to_i,
+      
       :creator => {
         :user_id     => self.user.id.to_i,
         :user_name   => self.user.username,
