@@ -51,5 +51,5 @@ gem "mini_magick", "3.5.0", :require => false
 # To use debugger
 # gem 'ruby-debug'
 
-gem 'ya2yaml'
+# gem 'ya2yaml'
 
