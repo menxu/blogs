@@ -1,4 +1,5 @@
 class FrontpagesController < ApplicationController
+  layout 'html5test'
 
   def index
     @hashs = Frontpage.roots

@@ -12,3 +12,75 @@
 .blogs-cen{
 	margin-left: 20px;
 }
+
+.page-frontpage-index{
+  padding: 20px;
+  background-color: #fff;
+  [class=zrticle]{
+    background-color: red;
+  }
+  [class*=zrticle]{
+    background-color: #abc;
+  }
+  [class^=a]{
+    background-color: #def;
+  }
+  [class$=e]{
+    background-color: #543;
+  }
+
+  div.before{
+    content: 'before 添加';
+  }
+
+  .shadow{
+    .box-shadow{
+      box-shadow: 3px 4px 2px #000;
+      -webkit-box-shadow:3px 4px 2px #000;
+      -moz-box-shadow:3px 4px 2px #000;
+      padding: 5px 4px;
+    }
+    .text-shadow{
+      text-shadow: 3px 4px 2px #000;
+      color: #666;
+      font-size: 16px;
+    }
+  }
+
+  .background{
+    height: 80px;
+    .background-size{
+      background:url(auth/auth-bg.jpg) no-repeat 0px 0px ;
+      background-size: 50px 40px;
+      padding: 10px;
+    }
+    .background-clip{
+      background:url(auth/auth-bg.jpg) no-repeat 0px 0px ;
+      background-clip: content-box;  /*| padding-box | border-box | no-clip;*/
+      padding: 10px;
+    }
+    .background-origin{
+      background:url(auth/auth-bg.jpg) no-repeat 0px 0px ;
+      background-origin: content;
+      padding: 10px;
+    }
+    .background{
+      background:url(auth/auth-bg.jpg) no-repeat 0px 0px ;
+    }
+  }
+  .radius-art{
+    .lab-radius{
+      background:url(auth/auth-bg.jpg) no-repeat 0px 0px ;
+      border-radius: 10px 5px;
+      margin: 40px;
+    }
+  }
+
+  .Media{
+    @media (max-width: 600px) {
+      .facet_sidebar {
+        display: none;
+      }
+    }
+  }
+}

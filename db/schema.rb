@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412044445) do
+ActiveRecord::Schema.define(:version => 20130522081131) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(:version => 20130412044445) do
     t.string   "file_name"
     t.integer  "file_size"
     t.string   "file_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "omniauths", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "expires_at"
+    t.boolean  "expires"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

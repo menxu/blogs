@@ -1,24 +1,233 @@
-- htitle '博客首页信息'
+/ - htitle '博客首页信息'
 
-- hbreadcrumb '博客首页'
+/ - hbreadcrumb '博客首页'
 
-.page-model-show
-  .shouye= :shouye
-  .categories
-    - @categorys.each do |category| 
-      .category= link_to category.name, category
+.page-frontpage-index
 
-  .blogs
-    - @blogs.each do |blog|
-      .uname= blog.user.username
-      .title= link_to blog.title,blog
-      .content= blog.content
-      .category= link_to blog.category.name , blog.category
-      .reprint= "评论 #{blog.comments.length} 转载"
+  %h1= "第2章 移动设备HTML5 页面布局"
 
-  .hashs
-    - @hashs.each do |hash|
-      %hr
-      - hash.each do |key,value|
-        .key= key
-        .val= value
+
+  %h2= "2.1 页面语义化简介"
+
+  %h3= "header 导航引导信息"
+  %header
+    %h3= "这是一本HTML5移动开发书籍"
+    %p= "本章主要介绍HTML5新标签"
+
+  %h3= "footer  & nav  文档章节末尾部分  nav 导航"
+  %footer
+    %nav
+      %ul
+        %li= "私隐信息"
+        %li= "版权信息"
+        %li= "关于我们"
+        %li= "联系我们"
+
+  %h3= "aside  装饰非正文的内容 例如 广告 侧边栏"
+  %aside
+    %p= "广告栏"
+
+  %h3= "article 文档 页面 显示独立一块文章内容"
+  %article
+    %header
+      %h3= "HTML5新元素article实例标题"
+      %p= "article 内容区域"
+      %footer
+        %ul
+          %li= "文章标签1"
+          %li= "文章标签2"
+
+  %h3= "section 文档中的节 如 页眉 章节 页脚 文档中其他部分"
+  %article
+    %section
+      %h3= "Apple"
+      %p= "iPhone 手机内置移动web浏览器是Safari"
+
+    %section
+      %h3= "Google"
+      %p= "Android 手机内置移动web浏览器是Android Browser"
+
+  %h3= "hgroup 对网页或区段的标题进行组合 副标题 标题行"
+  %header
+    %hgroup
+      %h3= "这是一本HTML5移动开发书籍"
+      %h4= "本章主要介绍HTML5新标签"
+
+
+  %h2= "2.1.2 HTML5新元素"
+  %html5
+    %ul
+      %li= "audio 音频"
+      %li= "canvas 画布"
+      %li= "command 命令"
+      %li= "datalist 下拉列表"
+      %li= "details 元素详细内容"
+      %li= "dialog 对话框"
+      %li= "keygen 表单里一个声称的键值"
+      %li= "mark 有标记的文本"
+      %li= "output 输出类型"
+      %li= "progress 任务的过程"
+      %li= "source 媒体资源"
+      %li= "video 视频内容"
+
+
+  %h1= "第3章 本地存储 localStorage  SessionStorage"
+  %setion
+    %p= "localStorage"
+    %aside
+      %ul
+        %li
+          %button.add= "添加数据"
+        %li
+          %button.get= "获取数据"
+        %li
+          %button.remove= "移除数据"
+        %li
+          %button.click= "清除数据"
+        %li
+          %button.parse= "解析JSON数据"
+  %section.localStorage
+  %section
+    %p= "Storage 事件监听"
+    %p.storage
+    
+  %h2= "第四章 移动Web的离线应用 applicationCache & manifest"
+  %setion
+    
+  %h2= "第五章 移动设备常用的HTML5表单元素"
+  %form
+    %p= "1. placeholder 属性 给文本框添加提示内容"
+    %input{:type => 'text', :placeholder => "请输入内容"}
+
+    %p= "2. autofocus 属性 自动获取焦点"
+    %input{:autofocus => true}
+
+    %p= "3. list datalist 属性 list数据由datalist 提供"
+    %input{:list => true, :datalist => ['1','2','3']}
+
+    %p= "4. autocomplete 属性 自动完成输入 on 开启 off 关闭"
+    %input{:autocomplete => 'on'}
+
+    %p= "5. required 属性 如果此为空 则无法提交表单"
+    %input{:required => true}
+
+    %p= "6. search 属性   safari & chrome"
+    %input{:type => :search}
+
+    %p= "7. email 属性  safari "
+    %input{:type => :email}
+
+    %p= "8. number 属性  safari "
+    %input{:type => :number}
+
+    %p= "9. range 属性  safari "
+    %input{:type => :range}
+
+    %p= "10. tel 属性  safari "
+    %input{:type => :tel}
+
+    %p= "11. url 属性  safari "
+    %input{:type => :url}
+
+    %p= "12. datetime 属性  safari "
+    %input{:type => :datetime}
+
+    %p= "13. datetime-local 属性  safari "
+    %input{:type => :datetime}
+
+    %p= "14. Time 属性  safari "
+    %input{:type => :Time}
+
+    %p= "15. Date 属性  safari "
+    %input{:type => :Date}
+
+    %p= "16. Week 属性  safari "
+    %input{:type => :Week}
+
+    %p= "17. Month 属性  safari "
+    %input{:type => :Month}
+
+
+  %h2= "第六章 移动Web界面样式 CSS3"
+  %section
+    %p= "选择器"
+    %p
+      %article
+        %lable= "属性选择器"
+        %lable.zrticle= "完全 [class=article]"
+        %lable.ddzrticless= "包含 [class*=article]"
+        %lable.abbddd= "首字母 [class=a]"
+        %lable.aaaaae= "为字母 [class=e]"
+
+      %article
+        %lable= "伪类选择器"
+        %div.before= "%div.before content:文字"
+        %lable.after= "%lable.after content:文字"
+        %lable.first-child= "%lable.first-child content:文字"
+        %lable.last-child= "%lable.last-child content:文字"
+        %lable.nth-child= "%lable.nth-child content:文字"
+        %lable.nth-last-child= "%lable.nth-last-child content:文字"
+
+    %p= "阴影"
+    %p
+      %article.shadow
+        %lable.box-shadow= "这是阴影效果 box-shadow: 3px 4px 2px #000;"
+        %lable.text-shadow= "这是文本阴影效果 text-shadow: 3px 4px 2px #000;"
+
+
+    %p= "背景"
+    %p
+      %article.background
+        %lable.background-size= "background-size 背景大小"
+        %lable.background-clip= "background-clip 背景裁剪区域"
+        %lable.background-origin= "background-origin 参考起始位置"
+        %lable.background= "background "
+
+    %p= "圆角"
+    %p
+      %article.radius-art
+        %lable.lab-radius= "radius 圆角"
+
+
+    %p= "Media Queries 移动设备样式"
+    %p
+      %article.Media
+        %lable.lab-radius= "radius 圆角"
+
+  %h2= "第七章 Geolocation 地理位置"
+  %p= "Geolocation 地理位置"
+  %p
+    %article.Media
+      %lable.lab-radius= "radius 圆角"
+
+  %h2= "第八章 经量级框架 jQuery Mobile"
+  %section
+  %p.jquery-mobile
+    %article.access
+      %p= "dataset自定义属性"
+      %div{:id => 'mobiletitle', :class => "mobiletitle", 'data-category' => '前端技术', 'data-title' => 'HTML5移动指南', 'data-time' => '2011-11-10', 'data-author' => 'sankyu' }
+
+      %p{'data-role' => 'page'}= "data-role 功能角色"
+      %p{'data-title' => 'title'}= "data-title 试图标题"
+      %p{'data-transition' => 'top'}= "data-transition"
+      %p{'data-rel' => 'true'}= "data-rel 试图浮动"
+      %p{'data-icon' => 'nil'}= "data-icon"
+      %p{'data-iconpos' => 'iconpos'}= "data-iconpos "
+      %p{'data-inline' => 'inline'}= "data-inline "
+      %p{'data-type' => 'type'}= "data-type "
+      %p{'data-rel' => 'back'}= "data-rel "
+      %p{'data-add-btn-text' => 'btn'}= "data-add-btn-text "
+      %p{'data-back-btn-text' => 'text'}= "data-back-btn-text "
+      %p{'data-postion' => 'text'}= "data-postion "
+      %p{'data-fullscreen' => 'text'}= "data-fullscreen "
+      %p{'data-native-menu' => 'text'}= "data-native-menu "
+      %p{'data-placeholder' => 'text'}= "data-placeholder "
+      %p{'data-inset' => 'text'}= "data-inset "
+      %p{'data-split-icon' => 'text'}= "data-split-icon "
+      %p{'data-split-theme' => 'text'}= "data-split-theme "
+      %p{'data-filter' => 'text'}= "data-filter "
+
+
+
+
+

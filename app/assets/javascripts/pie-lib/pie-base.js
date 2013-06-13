@@ -7,7 +7,7 @@ pie.load = function(func){
     try{
       func();
     }catch(e){
-      conclse.log("PIE: js加载错误 " + e);
+      console.log("PIE: js加载错误 " + e);
     }
   });
 }

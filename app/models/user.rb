@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   def login(password)
   	self.password == password
   end
+
+  include Omniauth::UserMethods 
 end

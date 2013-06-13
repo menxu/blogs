@@ -58,6 +58,11 @@ BlogTwo::Application.routes.draw do
   get  '/download/:download_id' => 'file_entities#download'
   post '/file_entities/:id/re_encode'  => 'file_entities#re_encode'
 
+   # /auth/weibo/callback
+  get '/auth/:provider/callback' => 'oauth#callback'
+  get '/account/sync' => 'oauth#sync'
+  post '/auth/:provider/unbind' => 'oauth#unbind'
+
   # get  '/api/blog_lists'  => 'blogs'
 
   # http_post http://localhost:3000/login

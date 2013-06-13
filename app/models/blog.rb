@@ -53,6 +53,9 @@ class Blog < ActiveRecord::Base
    }
   end
 end
+# 06-09 17:26:17.289: I/System.out(3328): avatar   =   http://192.168.1.14:3000/uploads/user/avatar/1/BusanSkyline_EN-US11706692536_1366x768.jpg
+# 06-09 17:35:46.799: I/System.out(3440): /mnt/sdcard/blog/search_history/search_list.txt
 
-# 1990
-# 2013
+# "user_avatar":{"avatar":{"url":"/uploads/user/avatar/1/BusanSkyline_EN-US1170669
+# 2536_1366x768.jpg"}}},
+

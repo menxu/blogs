@@ -1,0 +1,3 @@
+weibo_key: 2645755358
+weibo_secret: bb543651eedc797f8fdc5f273d569dc3
+weibo_redirect_uri: http://192.168.1.14:3000/auth/weibo/callback

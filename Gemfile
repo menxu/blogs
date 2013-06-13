@@ -30,11 +30,17 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem "jquery_mobile_rails", "~> 1.3.0"
 
 # 文件上传（fushang318增加） 
 gem "carrierwave", "0.8.0"
 # carrierwave 用到的图片切割
 gem "mini_magick", "3.5.0", :require => false
+
+
+# weibo omniauth-weibo-oauth2
+gem "weibo2", "~> 0.1.0"
+gem "omniauth-weibo-oauth2", "~> 0.3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
