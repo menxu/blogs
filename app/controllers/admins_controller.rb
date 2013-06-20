@@ -23,7 +23,7 @@ class AdminsController < ApplicationController
           :id => user.id,
           :username => user.username,
           :sign => "个人详细资料",
-          :avatar_url => "用户头像处理"
+          :avatar_url => user.avatar
         }
       else
         render :text => "登陆密码不正确" ,:status => "401"
@@ -47,6 +47,5 @@ end
 #             }
 #             # :user => user.as_json
 #             # ，
-#             # :xxx => xxx 
-#         }
+#     
 
