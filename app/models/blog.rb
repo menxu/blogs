@@ -59,3 +59,37 @@ end
 # "user_avatar":{"avatar":{"url":"/uploads/user/avatar/1/BusanSkyline_EN-US1170669
 # 2536_1366x768.jpg"}}},
 
+# - (void)viewDidLoad
+# {
+#     [super viewDidLoad];
+#   // Do any additional setup after loading the view, typically from a nib.
+    
+#     //启动BMKMapManager
+#     _mapManager = [[BMKMapManager alloc]init];
+#     BOOL ret = [_mapManager start:@"2772BD5CAFF652491F65707D6D5E9ABEBF3639CC" generalDelegate:self];
+#     if (!ret) {
+#         NSLog(@"manager start failed!");
+#     }
+    
+#     //创建一张百度地图
+#     BMKMapView* mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+#     [mapView setShowsUserLocation:YES];               //开启定位功能
+#     mapView.delegate = self;
+
+
+
+
+# - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+# {
+#     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+#     if (self) {
+       
+#         _mapManager = [[BMKMapManager alloc]init];
+#         // 如果要关注网络及授权验证事件,请设定 generalDelegate 参数
+#         [_mapManager start:@"708BAA2A8CCF60D4D422D348371881F72A0FC020" generalDelegate:nil];
+#         BMKMapView *mapView=[[BMKMapView alloc] initWithFrame:CGRectMake(0, 44, 320, 440)];
+#         [self.view addSubview:mapView];
+
+#     }
+#     return self;
+# }
