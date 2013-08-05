@@ -1,5 +1,5 @@
 source 'http://ruby.taobao.org'
-
+ruby '2.0.0'
 gem 'rails', '3.2.9'
 gem 'haml-rails'
 
@@ -42,6 +42,18 @@ gem "mini_magick", "3.5.0", :require => false
 gem "weibo2", "~> 0.1.0"
 gem "omniauth-weibo-oauth2", "~> 0.3.0"
 
+group :doc do
+  gem 'sdoc', '0.3.20', require:false
+end
+
+# group :development do
+#   gem 'sqlite3', '1.3.7'
+# end
+
+group :production do
+  gem 'pg', '0.15.1'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -59,3 +71,16 @@ gem "omniauth-weibo-oauth2", "~> 0.3.0"
 
 # gem 'ya2yaml'
 
+
+# 1.group :production do
+#   gem 'pg', '0.15.1'
+# end
+# 2.ruby '2.0.0'
+# 3.$ bundle install --without production
+# 4.$ git commit -a -m "Update Gemfile.lock for Heroku"
+# 5.$ heroku login
+# 6.$ heroku create
+# 7.$ git push heroku master
+# 8.$ heroku open
+# 9.$ heroku rename railstutorial
+# ('a'..'z').to_a.shuffle[0..7].join
