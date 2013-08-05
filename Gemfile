@@ -20,7 +20,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'rails_kindeditor', '~> 0.3.11'
+  ##gem 'rails_kindeditor', '~> 0.3.11'
 end
 
 group :test do
