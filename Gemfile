@@ -70,27 +70,3 @@ end
 # gem 'ruby-debug'
 
 # gem 'ya2yaml'
-
-
-# 1.group :production do
-#   gem 'pg', '0.15.1'
-# end
-# 2.ruby '2.0.0'
-# 3.$ bundle install --without production
-# 4.$ git commit -a -m "Update Gemfile.lock for Heroku"
-# 5.$ heroku login
-# 6.$ heroku create
-# 7.$ git push heroku master
-# 8.$ heroku open
-# 9.$ heroku rename railstutorial
-# ('a'..'z').to_a.shuffle[0..7].join
-# 10. brew install postgresql 
-# 11.$ gem install mysql2psql
-# 12.https://dashboard.heroku.com/apps/obscure-brook-5235/resources
-# 13.https://postgres.heroku.com/databases/obscure-brook-5235-brown
-
-
-# blog2(master): heroku create
-# Creating obscure-brook-5235... done, stack is cedar
-# http://obscure-brook-5235.herokuapp.com/ | git@heroku.com:obscure-brook-5235.git
-# Git remote heroku added
