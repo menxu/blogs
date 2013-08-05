@@ -84,3 +84,10 @@ end
 # 8.$ heroku open
 # 9.$ heroku rename railstutorial
 # ('a'..'z').to_a.shuffle[0..7].join
+# 10.$ gem install mysql2psql
+
+
+# blog2(master): heroku create
+# Creating obscure-brook-5235... done, stack is cedar
+# http://obscure-brook-5235.herokuapp.com/ | git@heroku.com:obscure-brook-5235.git
+# Git remote heroku added
