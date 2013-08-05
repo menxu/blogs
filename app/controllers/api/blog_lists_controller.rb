@@ -2,8 +2,12 @@
 class Api::BlogListsController < ApplicationController
   before_filter :login_required
 
-  def pull
+  def all
     render(:json => Blog.all.map{|blog| blog.to_hash})
+  end
+
+  def pull
+    render(:json => Blog.find(params[:server_id]).to_hash)
   end
 
 end
