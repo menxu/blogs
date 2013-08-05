@@ -84,7 +84,10 @@ end
 # 8.$ heroku open
 # 9.$ heroku rename railstutorial
 # ('a'..'z').to_a.shuffle[0..7].join
-# 10.$ gem install mysql2psql
+# 10. brew install postgresql 
+# 11.$ gem install mysql2psql
+# 12.https://dashboard.heroku.com/apps/obscure-brook-5235/resources
+# 13.https://postgres.heroku.com/databases/obscure-brook-5235-brown
 
 
 # blog2(master): heroku create
