@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522081131) do
+ActiveRecord::Schema.define(:version => 20130925074706) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(:version => 20130522081131) do
 
   add_index "comments", ["blog_id"], :name => "index_comments_on_blog_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "file_uploaders", :force => true do |t|
+    t.string   "title"
+    t.string   "desc"
+    t.integer  "file_entity_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "kindeditor_assets", :force => true do |t|
     t.string   "asset"

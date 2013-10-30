@@ -39,6 +39,10 @@ BlogTwo::Application.routes.draw do
   
   resources :blogs
 
+  # ==============================
+  resources :file_uploaders
+  # ==============================
+
   root :to => "frontpages#index"
 
   #用户登陆认证

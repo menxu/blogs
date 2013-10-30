@@ -13,8 +13,8 @@ gem 'json'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3' #当我们使用 asset pipeline时， 资源的路径必须重写而且 sass-rails 为下列类别提供了 -url 和 -path helpers(在 Sass 中使用连字符，在 Ruby 中使用下划线) : image, font, video, audio, JavaScript 和 stylesheet.  image-url(“rails.png”) 变成 url(/assets/rails.png)
+  gem 'coffee-rails', '~> 3.2.1' 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -43,7 +43,7 @@ gem "weibo2", "~> 0.1.0"
 gem "omniauth-weibo-oauth2", "~> 0.3.0"
 
 group :doc do
-  gem 'sdoc', '0.3.20', require:false
+  gem 'sdoc', '0.3.20', require:false #在 doc/api 目录下面会生成HTML版本的Rails Doc
 end
 
 # group :development do
@@ -53,6 +53,10 @@ end
 group :production do
   gem 'pg', '0.15.1'
 end
+
+# 数据查询
+gem 'pacecar', '1.5.3' # 给模型添加实用的scope
+gem 'kaminari', '0.14.1' # 分页支持
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
