@@ -20,6 +20,7 @@ BlogTwo::Application.routes.draw do
   end
 
 
+
   namespace :auth do
     root :to => 'logins#index'
     resources :logins
@@ -38,6 +39,8 @@ BlogTwo::Application.routes.draw do
   resources :comments
   
   resources :blogs
+
+  resources :courses
 
   # ==============================
   resources :file_uploaders
