@@ -7,4 +7,9 @@ class BlogsController < ApplicationController
 	    	format.json { render :json => @blog }
 	  end
 	end
+
+
+	def index
+	   @blogs = Blog.all
+	end
 end
